@@ -39,6 +39,10 @@ El backend es [cinerent-backend](https://github.com/Serberar/cinerent-backend).
 
 La app usa `/api/user`, `/api/product`, `/api/movie`, `/api/genre` y `/api/admin` del backend.
 
+## Licencia
+
+Publicado con licencia [MIT](LICENSE).
+
 ## Autor
 
 Sergio Bernabé
