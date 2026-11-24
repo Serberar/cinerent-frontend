@@ -1,8 +1,8 @@
-# CineRent · Frontend (proyecto intermodular DAW)
+# CineRent · Frontend
 
 Aplicación web en React para **alquilar películas online**: catálogo con filtro por géneros, carrito, registro con verificación de email, área de cliente y panel de administración.
 
-El backend de usuarios y alquileres está en [backend-daw](https://github.com/Serberar/backend-daw).
+El backend es [cinerent-backend](https://github.com/Serberar/cinerent-backend).
 
 ## Páginas
 
@@ -37,7 +37,7 @@ El backend de usuarios y alquileres está en [backend-daw](https://github.com/Se
    npm start      # http://localhost:3000
    ```
 
-La app espera estas rutas en el backend: `/api/user/*` y `/api/product/rent` (en backend-daw), y `/api/movie/*` y `/api/genre` para el catálogo.
+La app usa `/api/user`, `/api/product`, `/api/movie`, `/api/genre` y `/api/admin` del backend.
 
 ## Autor
 
