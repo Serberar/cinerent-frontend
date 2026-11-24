@@ -18,6 +18,10 @@ beforeEach(() => {
 it('muestra el catálogo y añade una película al carrito con el precio del género', async () => {
   render(<App />)
   await userEvent.click((await screen.findAllByText('Nebulosa'))[0])
+  expect(screen.getByRole('dialog', { name: 'Nebulosa' })).toBeInTheDocument()
+  await userEvent.keyboard('{Escape}')
+  expect(screen.queryByRole('dialog')).not.toBeInTheDocument()
+  await userEvent.click(screen.getAllByRole('button', { name: /Nebulosa/ })[0])
   await userEvent.click(screen.getByRole('button', { name: '+' }))
   expect(screen.getByText(/Total: 5\.00€/)).toBeInTheDocument()
   await userEvent.click(screen.getByRole('button', { name: 'Alquilar' }))

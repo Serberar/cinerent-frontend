@@ -739,3 +739,15 @@
     min-width: unset;
   }
 }
+
+/* Las tarjetas son botones: se quita su aspecto y se ve el foco del teclado */
+button.movieCard {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: inherit;
+}
+button.movieCard .movieTitle { display: block; }
+button.movieCard:focus-visible { outline: 2px solid #ff2d55; outline-offset: 3px; }

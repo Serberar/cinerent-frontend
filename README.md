@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml)
 
+**[Probar la demo](https://serberar.github.io/cinerent-frontend/)** · funciona entera en el navegador, con datos ficticios. Entra con cualquier email y contraseña.
+
 ![Catálogo de CineRent con datos de ejemplo](docs/catalogo.webp)
 
 Aplicación web en React para **alquilar películas online**: catálogo con filtro por géneros, carrito, registro con verificación de email, área de cliente y panel de administración.

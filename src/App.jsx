@@ -6,7 +6,7 @@ import { MyProvider } from './components/Context'
 function App () {
   return (
     <MyProvider>
-      <Router>
+      <Router basename={import.meta.env.BASE_URL}>
         <Nav />
         <Path />
       </Router>

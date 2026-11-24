@@ -12,7 +12,7 @@ axios.interceptors.response.use(
     if (isSessionExpired(err)) {
       localStorage.removeItem('token')
       localStorage.removeItem('userData')
-      window.location.href = '/login'
+      window.location.href = `${import.meta.env.BASE_URL}login`
     }
     return Promise.reject(err)
   }

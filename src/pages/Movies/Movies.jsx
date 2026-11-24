@@ -4,7 +4,7 @@ import { getPrice } from '../../utils/price'
 import './Movies.css'
 
 const MovieCard = ({ movie, onClick }) => (
-  <div className='movieCard' onClick={onClick}>
+  <button type='button' className='movieCard' onClick={onClick}>
     <div className='movieImageWrapper'>
       <img
         src={movie.posterUrl}
@@ -13,8 +13,8 @@ const MovieCard = ({ movie, onClick }) => (
       />
       <div className='movieOverlay'><span>Ver detalles</span></div>
     </div>
-    <p className='movieTitle'>{movie.title}</p>
-  </div>
+    <span className='movieTitle'>{movie.title}</span>
+  </button>
 )
 
 /* ── Horizontal row with scroll arrows ── */
@@ -26,13 +26,13 @@ const GenreRow = ({ genre, movies, openModal }) => {
     <section className='genreRow'>
       <h2 className='genreRowTitle'>{genre.name}</h2>
       <div className='genreRowWrapper'>
-        <button className='scrollArrow scrollArrowLeft' onClick={() => scroll(-1)}>‹</button>
+        <button aria-label='Anterior' className='scrollArrow scrollArrowLeft' onClick={() => scroll(-1)}>‹</button>
         <div className='genreRowScroll' ref={scrollRef}>
           {movies.map(movie => (
             <MovieCard key={movie.id} movie={movie} onClick={() => openModal(movie)} />
           ))}
         </div>
-        <button className='scrollArrow scrollArrowRight' onClick={() => scroll(1)}>›</button>
+        <button aria-label='Siguiente' className='scrollArrow scrollArrowRight' onClick={() => scroll(1)}>›</button>
       </div>
     </section>
   )
@@ -42,10 +42,16 @@ const Modal = ({ movie, onClose, onRent }) => {
   const [days, setDays] = useState(1)
   const pricePerDay = getPrice(movie)
 
+  useEffect(() => {
+    const onKey = (event) => event.key === 'Escape' && onClose()
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [onClose])
+
   return (
     <div className='modalOverlay' onClick={onClose}>
-      <div className='modalContent' onClick={e => e.stopPropagation()}>
-        <button className='modalClose' onClick={onClose}>✕</button>
+      <div className='modalContent' role='dialog' aria-modal='true' aria-label={movie.title} onClick={e => e.stopPropagation()}>
+        <button className='modalClose' aria-label='Cerrar' onClick={onClose}>✕</button>
         <div className='modalBody'>
           <img
             src={movie.posterUrl}
@@ -178,6 +184,7 @@ const Movies = () => {
               type='text'
               className='searchInput'
               placeholder='Buscar película...'
+              aria-label='Buscar película'
               value={search}
               onChange={e => setSearch(e.target.value)}
             />
