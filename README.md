@@ -1,5 +1,7 @@
 # CineRent · Frontend
 
+**Español** · [English](README.en.md)
+
 [![CI](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml)
 
 **[Probar la demo](https://serberar.github.io/cinerent-frontend/)** · funciona entera en el navegador, con datos ficticios. Entra con cualquier email y contraseña; si el email empieza por `admin`, verás el panel de administración.
