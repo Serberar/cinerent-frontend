@@ -1,5 +1,9 @@
 # CineRent · Frontend
 
+[![CI](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml)
+
+![Catálogo de CineRent con datos de ejemplo](docs/catalogo.webp)
+
 Aplicación web en React para **alquilar películas online**: catálogo con filtro por géneros, carrito, registro con verificación de email, área de cliente y panel de administración.
 
 El backend es [cinerent-backend](https://github.com/Serberar/cinerent-backend).
@@ -17,8 +21,8 @@ El backend es [cinerent-backend](https://github.com/Serberar/cinerent-backend).
 
 ## Tecnologías
 
-- React 18 con Create React App.
-- React Router 6.
+- React 18 y Vite.
+- React Router.
 - Context API para el estado global (usuario, carrito, géneros).
 - Axios para hablar con la API.
 
@@ -27,17 +31,24 @@ El backend es [cinerent-backend](https://github.com/Serberar/cinerent-backend).
 1. Crea un `.env` con la URL del backend:
 
    ```
-   REACT_APP_BACK_URL=http://localhost:4000
+   VITE_API_URL=http://localhost:4000
    ```
 
 2. Instala y arranca:
 
    ```bash
    npm install
-   npm start      # http://localhost:3000
+   npm run dev    # http://localhost:3000
    ```
 
 La app usa `/api/user`, `/api/product`, `/api/movie`, `/api/genre` y `/api/admin` del backend.
+
+## Pruebas
+
+```bash
+npm test        # Vitest y Testing Library
+npm run build   # genera build/
+```
 
 ## Licencia
 

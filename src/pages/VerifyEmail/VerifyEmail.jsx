@@ -3,7 +3,7 @@ import { useSearchParams, Link } from 'react-router-dom'
 import axios from 'axios'
 import './VerifyEmail.css'
 
-const API = process.env.REACT_APP_BACK_URL
+import { API } from '../../config'
 
 const VerifyEmail = () => {
   const [searchParams] = useSearchParams()

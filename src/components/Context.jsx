@@ -1,15 +1,15 @@
 import { createContext, useState, useEffect } from 'react'
 import axios from 'axios'
 import { fetchMovies, adaptMovie } from '../services/movieService'
+import { API } from '../config'
+import { isSessionExpired } from '../utils/session'
 
 export const myContext = createContext()
-
-const API = process.env.REACT_APP_BACK_URL
 
 axios.interceptors.response.use(
   res => res,
   err => {
-    if (err.response?.status === 401) {
+    if (isSessionExpired(err)) {
       localStorage.removeItem('token')
       localStorage.removeItem('userData')
       window.location.href = '/login'

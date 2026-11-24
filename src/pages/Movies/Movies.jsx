@@ -1,11 +1,7 @@
 import { useContext, useState, useMemo, useRef, useEffect } from 'react'
 import { myContext } from '../../components/Context'
+import { getPrice } from '../../utils/price'
 import './Movies.css'
-
-const getPrice = (movie) => {
-  if (!movie.genres?.length) return 2
-  return Math.max(...movie.genres.map(g => g.price ?? 2))
-}
 
 const MovieCard = ({ movie, onClick }) => (
   <div className='movieCard' onClick={onClick}>

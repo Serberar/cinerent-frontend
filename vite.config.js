@@ -1,0 +1,10 @@
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  plugins: [react()],
+  envPrefix: ['VITE_', 'REACT_APP_'],
+  server: { port: 3000 },
+  build: { outDir: 'build' },
+  test: { environment: 'jsdom', globals: true, setupFiles: './src/test/setup.js' },
+})
