@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/Serberar/cinerent-frontend/actions/workflows/ci.yml)
 
-**[Probar la demo](https://serberar.github.io/cinerent-frontend/)** · funciona entera en el navegador, con datos ficticios. Entra con cualquier email y contraseña.
+**[Probar la demo](https://serberar.github.io/cinerent-frontend/)** · funciona entera en el navegador, con datos ficticios. Entra con cualquier email y contraseña; si el email empieza por `admin`, verás el panel de administración.
 
 ![Catálogo de CineRent con datos de ejemplo](docs/catalogo.webp)
 
@@ -23,10 +23,10 @@ El backend es [cinerent-backend](https://github.com/Serberar/cinerent-backend).
 
 ## Tecnologías
 
-- React 18 y Vite.
-- React Router.
-- Context API para el estado global (usuario, carrito, géneros).
-- Axios para hablar con la API.
+- React 18, TypeScript estricto y Vite.
+- React Router y Context API.
+- Axios, con la sesión en una cookie `HttpOnly`: no hay ningún token en el navegador.
+- Vitest, Testing Library y ESLint.
 
 ## Cómo arrancarlo
 
@@ -48,7 +48,8 @@ La app usa `/api/user`, `/api/product`, `/api/movie`, `/api/genre` y `/api/admin
 ## Pruebas
 
 ```bash
-npm test        # Vitest y Testing Library
+npm run lint
+npm test        # Vitest y Testing Library, con recorridos completos
 npm run build   # genera build/
 ```
 
