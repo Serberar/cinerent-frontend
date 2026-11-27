@@ -1,10 +1,10 @@
 # CineRent · Frontend
 
-**[Try the demo](https://serberar.github.io/cinerent-frontend/)**: it runs entirely in the browser with made-up data. Sign in with any email and password; if the email starts with `admin` you get the admin panel.
+**Try the demo**: it runs entirely in the browser with made-up data. Sign in with any email and password; if the email starts with `admin` you get the admin panel.
 
 ![CineRent catalogue with sample data](docs/catalogo.webp)
 
-React and strict TypeScript web app to **rent films online**: catalogue, cart, registration, customer area and admin panel. The backend is [cinerent-backend](https://github.com/Serberar/cinerent-backend).
+React and strict TypeScript web app to **rent films online**: catalogue, cart, registration, customer area and admin panel. The backend is cinerent-backend.
 
 - The session is an `HttpOnly` cookie: there is no token in the browser.
 - Keyboard-friendly dialogs and labelled forms.
